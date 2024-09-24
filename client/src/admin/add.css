@@ -1,0 +1,27 @@
+input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-upload {
+    margin: auto;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 20px;
+
+    
+  }
+  
+  .custom-file-upload > img{
+    width: 200px;
+    height: 200px;
+  }
+
+  .box{
+    background-image: url(img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+  }
