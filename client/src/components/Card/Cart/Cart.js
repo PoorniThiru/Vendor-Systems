@@ -45,24 +45,6 @@ const Cart = () => {
     
 
     const handleCheckout = async () => {
-        // if(cartItems.totalAmount > 0){
-        //     const config = {
-        //         reason: 'checkout',
-        //         amount: cartItems.totalAmount
-        //     }
-
-        // await axios.post("http://localhost:5000/api/payment", config)
-        //     .then((res) => {
-        //             console.log(res.data)
-        //             window.location.replace(res.data)
-        //             handleCheckoutOpen()
-        //         }
-        //     )
-        //     .catch((err) => console.log(err))
-        // }
-        // else {
-        //     return
-        // }
          
            
         if(cartItems.totalAmount > 0){
@@ -84,7 +66,7 @@ const Cart = () => {
               
               var booking_id="poorni" +Math.floor(Math.random() * 9999)
               var data={user_id:getUserData(),items:cartItems.items,totalAmount:cartItems.totalAmount,payment_id:response.razorpay_payment_id,booking_id:booking_id,date:date1.toISOString().split('T')[0]}
-              axios.post("http://localhost:5000/invoicedata",data)
+              axios.post("https://vms-new.onrender.com/invoicedata",data)
               .then((res)=>{
                 handleCheckoutOpen()
                 alert(response.razorpay_payment_id);

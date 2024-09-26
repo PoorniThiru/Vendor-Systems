@@ -10,7 +10,7 @@ const Related = (props) => {
     const [ kidsItems, setKidsItems ] = useState()
 
     useEffect(() => {
-        axios.get("https://localhost:5000/api/items")
+        axios.get("https://vms-new.onrender.com/api/items")
             .then(res => {
                 setMenItems(res.data.filter((item) => item.category === "men"))
                 setKidsItems(res.data.filter((item) => item.category === "kids" ))

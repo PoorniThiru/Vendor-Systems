@@ -32,7 +32,7 @@ app.use(function (req,res,next){
     next();
 });
 
-// connect to the mongodb database
+// connect to the mongodb databas
  connectDB() 
 
 

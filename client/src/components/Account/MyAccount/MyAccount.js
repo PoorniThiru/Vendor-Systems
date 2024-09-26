@@ -24,7 +24,7 @@ const MyAccount = () => {
    
     useEffect(()=>{
         if(getUseremail() === 'admin@gmail.com'){
-            axios.get("http://localhost:5000/invoicelist")
+            axios.get("https://vms-new.onrender.com/invoicelist")
             .then((res)=>{
             
                 setinvoicedatas(res.data)
@@ -32,7 +32,7 @@ const MyAccount = () => {
              })
              .catch(err=>console.log(err))
         }else{
-        axios.post("http://localhost:5000/invoicelist",{user_id})
+        axios.post("https://vms-new.onrender.com/invoicelist",{user_id})
         .then((res)=>{
             
            setinvoicedatas(res.data)
@@ -57,7 +57,7 @@ const MyAccount = () => {
                 <div className="order__history">
                     <div className="order__history__header">{getUseremail() === 'admin@gmail.com' ? "User's Oders Histery" : 'Yours Orders'} </div>
                     <div className="order__history__detail" >
-                        <div className='container' >
+                        <div className='container5' >
                         <table className='table'  >
                                 <tr>
                                     <th>{getUseremail() === 'admin@gmail.com' ? 'User_Id' : 'S.no'}</th>

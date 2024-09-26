@@ -31,7 +31,7 @@ const Footer = () => {
                         <ul className="footer__contacts">
                             <li className="footer__contact"><LocalPhoneIcon /> <span>+123 4567 890</span></li>
                             <li className="footer__contact"> <EmailIcon /> <span>shop@gmail.com</span></li>
-                            <li className="footer__contact"><LocationOnIcon /> <span>Addis, Bangalore</span></li>
+                            <li className="footer__contact"><LocationOnIcon /> <span>JP Nagar, Bangalore</span></li>
                         </ul>
                     </div>
                     <div className="footer__social__link__container">

@@ -37,3 +37,11 @@
     flex-wrap: wrap-reverse;
     align-items: flex-start;
 } 
+
+@media (max-width: 400px) {
+    .account__page__detail {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+    }
+}

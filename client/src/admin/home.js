@@ -13,7 +13,7 @@ function Homeadmin() {
     
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/items")
+        axios.get("https://vms-new.onrender.com/api/items")
             .then(res => setdItems(res.data))
             .catch(err => console.log(err))
 

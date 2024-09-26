@@ -40,7 +40,7 @@ const CartCard = (props) => {
         <div className='cart__item__card'>
             <div className="cart__item__detail">
                 <div className="cart__item__image">
-                    <img src={`http://localhost:5000/${props.item.category}/${props.item.image[0].filename}`} alt="item" className="item__image"/>
+                    <img src={`https://vms-new.onrender.com/${props.item.category}/${props.item.image[0].filename}`} alt="item" className="item__image"/>
                 </div>
                 <div className="cart__item__name">{props.item.name}</div>
             </div>

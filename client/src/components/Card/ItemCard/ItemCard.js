@@ -54,7 +54,7 @@ const ItemCard = (props) => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 > 
-                    {isHovered? <img src={`http://localhost:5000/public/${props.item.category}/${props.item.image[0].filename}`} alt="item" className="product__img"/>: <img src= {`http://localhost:5000/public/${props.item.category}/${props.item.image[0].filename}`} alt="item" className="product__img"/> }
+                    {isHovered? <img src={`https://vms-new.onrender.com/public/${props.item.category}/${props.item.image[0].filename}`} alt="item" className="product__img"/>: <img src= {`https://vms-new.onrender.com/public/${props.item.category}/${props.item.image[0].filename}`} alt="item" className="product__img"/> }
                 </div>
                 <div className="product__card__detail">
                     <div className="product__name">

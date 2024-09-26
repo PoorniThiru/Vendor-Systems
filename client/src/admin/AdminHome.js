@@ -38,7 +38,7 @@ const AdminHome = () => {
 
     }
     useEffect(() => {
-        axios.get("http://localhost:5000/api/items")
+        axios.get("https://vms-new.onrender.com/api/items")
             .then(res => {
                 setdItems(res.data);
                 console.log(res.data)})
@@ -50,7 +50,7 @@ const AdminHome = () => {
 
   const handledelete=async(id)=>{
      
-    await axios.post("http://localhost:5000/delete/item",{_id:id})
+    await axios.post("https://vms-new.onrender.com/delete/item",{_id:id})
     .then((res)=>{alert('deleted Success')})
     .catch((err)=>(console.log(err)))
   }
@@ -81,7 +81,7 @@ const AdminHome = () => {
           
             if(category==='men'){
                   
-                  await axios.post(`http://localhost:5000/product/update/men`,formdata ,{
+                  await axios.post(`https://vms-new.onrender.com/product/update/men`,formdata ,{
                   headers:{'Content-Type':"mutipart/form-data"}
                   })
                   .then((res)=>{
@@ -90,7 +90,7 @@ const AdminHome = () => {
                   })
                   .catch((err)=>(console.log(err)))
          }else if(category==='women'){
-            await axios.post(`http://localhost:5000/product/update/women`,formdata ,{
+            await axios.post(`https://vms-new.onrender.com/product/update/women`,formdata ,{
                headers:{'Content-Type':"mutipart/form-data"}
                })
                .then((res)=>{
@@ -100,7 +100,7 @@ const AdminHome = () => {
                .catch((err)=>(console.log(err)))
          }else{
            
-            await axios.post(`http://localhost:5000/product/update/kids`,formdata ,{
+            await axios.post(`https://vms-new.onrender.com/product/update/kids`,formdata ,{
                headers:{'Content-Type':"mutipart/form-data"}
                })
                .then((res)=>{

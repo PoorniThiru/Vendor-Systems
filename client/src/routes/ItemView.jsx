@@ -15,7 +15,7 @@ const ProductView = (props) => {
         window.scrollTo(0, 0)
         console.log(param.id)
 
-         axios.get("http://localhost:5000/api/items")
+         axios.get("https://vms-new.onrender.com/api/items")
             .then(res => {
                 console.log(res.data)
                it=(res.data.filter((item1) => item1._id === param.id))

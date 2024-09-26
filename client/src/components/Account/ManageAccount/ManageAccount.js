@@ -14,7 +14,7 @@ const ManageAccount = () => {
     const [lname,setlname]=useState('')
     useEffect(()=>{
           async function updatefunction(){
-            await axios.post('http://localhost:5000/updateuser',{userid})
+            await axios.post('https://vms-new.onrender.com/updateuser',{userid})
             .then((res)=>setuserdata(res.data))
             .catch(err=>console.log(err))
           }
@@ -25,7 +25,7 @@ const ManageAccount = () => {
         if(fname==='' || lname===''){
             alert('Change first name and last name before save click')
         }else{
-        await axios.post('http://localhost:5000/updateuserdata',{userid,fname,lname})
+        await axios.post('https://vms-new.onrender.com/updateuserdata',{userid,fname,lname})
         .then((res)=>{
             storeUserData(res.data);
             alert('updated success')})
@@ -36,7 +36,7 @@ const ManageAccount = () => {
     }
 
     const handledelete=async()=>{
-        await axios.post('http://localhost:5000/updateuserdelete',{userid})
+        await axios.post('https://vms-new.onrender.com/updateuserdelete',{userid})
        .then((res)=>{
         logout()
         

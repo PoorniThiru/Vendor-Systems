@@ -13,7 +13,7 @@ const Shop = () => {
     const [ loading , setLoading ] = useState(true) 
 
     async function fetchData(){
-        await axios.get("http://localhost:5000/api/items")
+        await axios.get("https://vms-new.onrender.com/api/items")
             .then(res => {
                 setMenItems(res.data.filter((item) => item.category === "men"))
                 setKidsItems(res.data.filter((item) => item.category === "kids" ))

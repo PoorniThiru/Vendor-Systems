@@ -25,10 +25,6 @@ import Add from '../admin/Add';
 function App() {
 
   return (
-  //   <>
-  //  <Add />
-  //  <AdminHome />
-  //   </>
    <CartItemsProvider>
       <WishItemsProvider>
         <SearchProvider>

@@ -8,13 +8,13 @@ const ProductCarousel = (props) => {
           <Carousel variant="dark" interval={4000}>
             <Carousel.Item>
             <div className="carousel__image__container">
-                <img className="carousel__image" src={`https://localhost:5000/public/${props.item.category}/${props.item.image[0].filename}`} alt="item"/>
+                <img className="carousel__image" src={`https://vms-new.onrender.com/public/${props.item.category}/${props.item.image[0].filename}`} alt="item"/>
              
             </div>
             </Carousel.Item>  
             <Carousel.Item>
             <div className="carousel__image__container">
-                <img className="carousel__image" src={`https://localhost:5000/public/${props.item.category}/${props.item.image[1].filename}`} alt="item"/>
+                <img className="carousel__image" src={`https://vms-new.onrender.com/public/${props.item.category}/${props.item.image[1].filename}`} alt="item"/>
               </div>
             </Carousel.Item>   
           </Carousel>

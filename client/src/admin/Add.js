@@ -34,7 +34,7 @@ function Add(props) {
             console.log(file);
            
             if(category==='men'){
-                  await axios.post(`http://localhost:5000/product/add/men`,formdata ,{
+                  await axios.post(`https://vms-new.onrender.com/product/add/men`,formdata ,{
                   headers:{'Content-Type':"mutipart/form-data"}
                   })
                   .then((res)=>{
@@ -42,7 +42,7 @@ function Add(props) {
                   })
                   .catch((err)=>(console.log(err)))
          }else if(category==='women'){
-            await axios.post(`http://localhost:5000/product/add/women`,formdata ,{
+            await axios.post(`https://vms-new.onrender.com/product/add/women`,formdata ,{
                headers:{'Content-Type':"mutipart/form-data"}
                })
                .then((res)=>{
@@ -50,7 +50,7 @@ function Add(props) {
                })
                .catch((err)=>(console.log(err)))
          }else{
-            await axios.post(`http://localhost:5000/product/add/kids`,formdata ,{
+            await axios.post(`https://vms-new.onrender.com/product/add/kids`,formdata ,{
                headers:{'Content-Type':"mutipart/form-data"}
                })
                .then((res)=>{
