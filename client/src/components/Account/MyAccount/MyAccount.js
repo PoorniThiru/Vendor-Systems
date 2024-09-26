@@ -53,11 +53,28 @@ const MyAccount = () => {
     }
     return ( 
         <Account>
-            <div className="order__history__container">
-                <div className="order__history">
+             <div className="col-12 col-lg-12 mt-3">
+                <div className="account__details__header">
+                    <div className="details__header">Account Details</div> 
+                    <a href="/" className="btn-danger text-white btn" onClick={logoutUser} 
+                    style={{cursor:"pointer",width:'200px',padding:'10px',fontSize:'1.5em'}}>
+                    Sign out
+                  </a>
+                </div>
+                <div className="account__details">
+                    <div className="account__holder__name">Account holder name : {getUserName()}</div>
+                    <div className="account__holder__email">Account holder email : {getUseremail()}</div>
+                    <div className="manage__account__action">
+                        <a href="/account/manage" className='btn btn-dark me-5 mt-3'>Manage account</a> 
+                        {getUseremail() === 'admin@gmail.com' ? <a href="/Admin" className='btn btn-dark mt-3'>Admin</a> : null}
+                    </div>
+                </div>
+            </div>
+
+            <div className="maincon col-6 col-12 col-lg-12 mt-2 mb-4" >
                     <div className="order__history__header">{getUseremail() === 'admin@gmail.com' ? "User's Oders Histery" : 'Yours Orders'} </div>
-                    <div className="order__history__detail" >
-                        <div className='container5' >
+                    
+                        <div className='tabcon' >
                         <table className='table'  >
                                 <tr>
                                     <th>{getUseremail() === 'admin@gmail.com' ? 'User_Id' : 'S.no'}</th>
@@ -88,26 +105,10 @@ const MyAccount = () => {
 
                
                         </div>
-                    </div>
-                </div>
+                    
+               
             </div>
-            <div className="account__details__container">
-                <div className="account__details__header">
-                    <div className="details__header">Account Details</div> 
-                    <a href="/" className="bg-black text-white btn w-50 " onClick={logoutUser} 
-                    style={{cursor:"pointer"}}>
-                    Sign out
-                  </a>
-                </div>
-                <div className="account__details">
-                    <div className="account__holder__name">Account holder name : {getUserName()}</div>
-                    <div className="account__holder__email">Account holder email : {getUseremail()}</div>
-                    <div className="manage__account__action">
-                        <a href="/account/manage" className='btn btn-dark me-5 mt-3'>Manage account</a> 
-                        {getUseremail() === 'admin@gmail.com' ? <a href="/Admin" className='btn btn-dark mt-3'>Admin</a> : null}
-                    </div>
-                </div>
-            </div>
+           
         </Account>
      );
 }

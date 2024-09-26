@@ -7,7 +7,7 @@ const Account = (props) => {
                 <div className="account__header text-center">
                     <h1 style={{fontSize:'50px', color:'rgb(255, 0, 0, 0.5)', fontWeight:'bolder'}}>My account</h1>
                 </div>
-                <div className="account__page__detail">
+                <div className="row">
                     {props.children}
                 </div>
             </div>

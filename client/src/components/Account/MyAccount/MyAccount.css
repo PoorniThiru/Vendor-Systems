@@ -48,7 +48,7 @@
     height: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+   
     align-items: center;
 }
 
@@ -82,13 +82,21 @@
     top: 0;
 }
 
-.container5{
-    max-width: 900px;
-    margin: 20px 0;
-    height: 60vh;
+.tabcon{
+    height: 100%;
     overflow: scroll;
 }
-.table{
+
+.maincon{
+    height: 100vh;
+}
+
+.container5{
+    max-width: 900px;
+
+    overflow: scroll;
+}
+.table1{
     width: 100%;
     border-collapse: collapse;
     cursor: pointer;
