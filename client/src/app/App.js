@@ -60,7 +60,7 @@ function App() {
               </Route>
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/search/*" element={<SearchView />} />
-              <Route path="/admin" element={<AdminHome />}/>
+              <Route path="/vmsadmin" element={<AdminHome />}/>
               <Route path='item/create' element={<Add />}/>
             </Routes>
              
