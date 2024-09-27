@@ -65,8 +65,13 @@ const MyAccount = () => {
                     <div className="account__holder__name">Account holder name : {getUserName()}</div>
                     <div className="account__holder__email">Account holder email : {getUseremail()}</div>
                     <div className="manage__account__action">
+<<<<<<< HEAD
                         <Link to="/account/manage" className='btn btn-dark me-5 mt-3'>Manage account</Link> 
                         {getUseremail() === 'admin@gmail.com' ? <Link to="/Admin" className='btn btn-dark mt-3'>Admin</Link> : null}
+=======
+                        <a href="/account/manage" className='btn btn-dark me-5 mt-3'>Manage account</a> 
+                        {getUseremail() === 'admin@gmail.com' ? <a href="/vmsadmin" className='btn btn-dark mt-3'>Admin</a> : null}
+>>>>>>> 697dd68f1892eeb618441392fe44f4779da561d6
                     </div>
                 </div>
             </div>
