@@ -3,12 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { useEffect,useState } from 'react';
 import './AdminHome.css'
-
+import { useRef } from 'react';
+import avatar from '../components/Nav/Nav-Brand/logo.png'
+import { Link } from 'react-router-dom';
 
 
 
 const AdminHome = () => {
     
+    const inpref=useRef()
+
+
     const [Items,setdItems]=useState([])
     const [modelopen, setmodelopen]=useState(false)
     const [name, setname] = useState(''); 
@@ -22,7 +27,7 @@ const AdminHome = () => {
         const [highlights, sethighlights] = useState([]);
         const [file, setfile] = useState(); 
         const [file1, setfile1] = useState(); 
-     const handleUpdate=async(item)=>{
+     const handleUpdate=(item)=>{
         setmodelopen(true)
         setid(item._id)
         setname(item.name)
@@ -34,6 +39,7 @@ const AdminHome = () => {
         setcolor(item.color)
         sethighlights(item.highlights[0])
         setfile(item.image)
+        inpref.current.focus()
         console.log(file[0])
 
     }
@@ -116,15 +122,25 @@ const AdminHome = () => {
     setmodelopen(false)
  }
 
+ const [postImage, setPostImage] = useState( {myFile : ""})
+ const handleFileUpload = async (e) => {
+  setfile1(e.target.files[0])
+  const file23 = e.target.files[0];
+  const base64 = await convertToBase64(file23);
+  console.log(base64)
+  setPostImage({ ...postImage, myFile : base64 })
+}
+
+
 
   return (
 
     <div>
         
        <div className='container1 pb-5'>
-       <a style={{ zIndex:'999', marginTop:'30vh'}} className='d-grid gap-2 text-center  m-3 mt-5' href="item/create">
+       <Link style={{ zIndex:'999', marginTop:'30vh'}} className='d-grid gap-2 text-center  m-3 mt-5' to="item/create">
         <center><button size="lg" className='btn btn-dark w-25 mt-5' style={{fontSize:'25px',  color:'lightseagreen'}}>Create Product</button></center>
-      </a>
+      </Link>
         <table className='table1'>
             <thead>
                 <h1 className='fs-1'>Product List</h1>
@@ -194,11 +210,11 @@ const AdminHome = () => {
     </div>
 
 
-    { modelopen && <div className='boxmodel' style={{backgroundColor:'white'}}> 
+    { modelopen && <div className='boxmodel' id='modeledit' style={{backgroundColor:'white'}}> 
        <form onSubmit={handlesubmit} className='forms'>
-         <h1 className='fs-2 text-center text-success fs-1' style={{marginRight:'70%'}}>Edit Product </h1>
+         <h1 className='fs-2 text-center text-success fs-1' style={{marginRight:'70%', marginTop:'-13%'}}>Edit Product </h1>
             <div className='d-flex flex-row fs-5' style={{marginTop:'3%'}}>
-               <div style={{width:'200px'}}>Product Name</div> <div><input type='text' className='form-control' value={name} onChange={(e)=>(setname(e.target.value))} /></div>
+               <div style={{width:'200px'}}>Product Name</div> <div><input type='text' ref={inpref} className='form-control' value={name} onChange={(e)=>(setname(e.target.value))} /></div>
             </div>
             <div className='d-flex flex-row fs-5 ' style={{marginTop:'3%'}}>
                <div style={{width:'200px'}} >Category</div> <div><select className="custom-select" id="inputGroupSelect01" value={category} onChange={(e)=>(setcategory(e.target.value))}  >
@@ -231,9 +247,23 @@ const AdminHome = () => {
 
 
             <div className='d-flex flex-row fs-5' style={{marginTop:'3%'}}>
-               <div style={{width:'200px'}}>Change image</div> <div><input type='file' name='file1' className='form-control w-75' placeholder='Change image' onChange={(e)=>(setfile1(e.target.files[0]))}/> <img src={`http://localhost:5000/public/${category}/${file[0].filename}`} alt="item" style={{width:'100px',height:'100px',border: '1px solid black'}}/></div>
-              
-            </div>
+                 <div style={{width:'200px'}}>Add Image</div> 
+                 <div><input 
+          type="file"
+          lable="Image"
+          name="myFile"
+          id='file-upload'
+          accept='.jpeg, .png, .jpg'
+          onChange={(e) => handleFileUpload(e)}
+         />               <label htmlFor="file-upload" className='custom-file-upload'>
+         <img src={postImage.myFile || `https://vms-new.onrender.com/public/${category}/${file[0].filename}` } alt=""  />
+         <p style={{width:'200px'}}>Click to change Image</p>
+       </label>
+       </div>
+       </div>
+
+
+
              <div className='d-flex flex-row fs-5' style={{marginTop:'3%'}}>
                <div style={{width:'200px'}}>Highlights</div> <div><input type="checkbox"  name='high' value='black' aria-label="Checkbox for following text input" onChange={(e)=>(sethighlights(pre=>[...pre,e.target.value]))}/>Black
                <input type="checkbox" name='high' value='Green' className='ms-3' aria-label="Checkbox for following text input" onChange={(e)=>(sethighlights(pre=>[...pre,e.target.value]))}/>Green
@@ -254,3 +284,16 @@ const AdminHome = () => {
 }
 
 export default AdminHome
+
+function convertToBase64(file){
+   return new Promise((resolve, reject) => {
+     const fileReader = new FileReader();
+     fileReader.readAsDataURL(file);
+     fileReader.onload = () => {
+       resolve(fileReader.result)
+     };
+     fileReader.onerror = (error) => {
+       reject(error)
+     }
+   })
+ }

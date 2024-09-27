@@ -115,7 +115,7 @@ function Add(props) {
 
 
               <div className='d-flex flex-row fs-5' style={{marginTop:'3%'}}>
-                 <div style={{width:'200px'}}>Image1</div> 
+                 <div style={{width:'200px'}}>Add Image</div> 
                  <div><input 
           type="file"
           lable="Image"

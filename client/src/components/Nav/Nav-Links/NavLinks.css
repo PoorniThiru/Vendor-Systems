@@ -30,14 +30,14 @@ a:hover {
     /* justify-content: space-between; */
     
     z-index: 100;
-    margin-bottom: -5%;
+    margin-bottom: -7%;
     box-shadow: 1px px 1px 0px;
     justify-content: center;
 
 }
 
 .bottom__container {
-    margin-top: 9vh;
+    margin-top: 8vh;
     height: 5vh;
     width: 100vw;
     display: flex;
