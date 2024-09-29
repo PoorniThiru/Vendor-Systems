@@ -61,7 +61,7 @@ function App() {
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/search/*" element={<SearchView />} />
               <Route path="/vmsadmin" element={<AdminHome />}/>
-              <Route path='item/create' element={<Add />}/>
+              <Route path='/vmsadmin/item/create' element={<Add /> }/>
             </Routes>
              
             <Footer />
