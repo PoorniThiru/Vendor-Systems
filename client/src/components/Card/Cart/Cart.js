@@ -10,6 +10,7 @@ import './Cart.css'
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import { getUserData } from '../../services/Storage';
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -27,6 +28,7 @@ const style = {
 };
 
 const Cart = () => {
+    const navigate=useNavigate()
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => {setOpen(false);window.location.reload();}
@@ -69,10 +71,11 @@ const Cart = () => {
               axios.post("https://vms-new.onrender.com/invoicedata",data)
               .then((res)=>{
                 handleCheckoutOpen()
-                alert(response.razorpay_payment_id);
-               cartItems.items=[];
+                // alert(response.razorpay_payment_id);
+                cartItems.items=[];
                 handleaddressclose()
                 handleClose()
+                navigate('/')
                 
               })
               .catch((err)=>console.log(err))

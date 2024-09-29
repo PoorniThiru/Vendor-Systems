@@ -40,7 +40,7 @@ function App() {
                 <Route path="*" element={<Login />}/>
               </Route>
               
-              <Route path="/shop" element={<Shop />}/>
+              <Route path="/shop" element={<Shop/>}/>
               <Route path="/category">
                 <Route path=":id" element={<CategoryView />}/>
               </Route>
