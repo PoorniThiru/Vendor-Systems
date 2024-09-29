@@ -72,10 +72,11 @@ const Cart = () => {
               .then((res)=>{
                 handleCheckoutOpen()
                 // alert(response.razorpay_payment_id);
-                cartItems.items=[];
-                handleaddressclose()
-                handleClose()
                 navigate('/')
+                handleaddressclose()
+
+                handleClose()
+                cartItems.items=[];
                 
               })
               .catch((err)=>console.log(err))
